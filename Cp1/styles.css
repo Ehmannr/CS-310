@@ -15,10 +15,20 @@
     --text: #363537;
 }
 
-a,ul,li,h6,h5,h4,h3,h2,h1,p {
-    font-family: 'Roboto', sans-serif;
+a,ul,li,p {
+    font-family: "Josefin Sans",sans-serif;
     line-height: 1.55rem;
     letter-spacing: 1px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Josefin Sans",sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.125em;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.25;
+    margin: 3rem 0;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~ */
@@ -34,7 +44,8 @@ a,ul,li,h6,h5,h4,h3,h2,h1,p {
     z-index: 999;
     background-color: #525e65;
     text-align: center;
-    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
+    /*      small after glow under grey nav      */
+    box-shadow: 0 7px 20px 0 rgba(255, 255, 255, 0.253), 0 4px 10px 0 rgba(255, 255, 255, 0.397);
     
 }
 
@@ -65,7 +76,7 @@ a,ul,li,h6,h5,h4,h3,h2,h1,p {
    height:3px;
    width: 100%;
    background: #519872;
-   transition: all 0.5s ease-out;
+  
 }
 
 /* ~~~~~~~~~~~~~~~~~~~ */
@@ -73,7 +84,7 @@ a,ul,li,h6,h5,h4,h3,h2,h1,p {
 /* ~~~~~~~~~~~~~~~~~~~ */
 
 #intro{
-    padding: 25px 50px 75px 100px;
+    padding: 1%;
     background:var(--primary);
     height: 99vh;
     width: 100vw;
@@ -83,8 +94,8 @@ a,ul,li,h6,h5,h4,h3,h2,h1,p {
 }
 #name-card{
     font-size: 3.5rem;
-    margin:5%;
+    margin:1.5%;
 }
 #major{
-    margin:0 4%;
+    margin:1.5%;
 }
