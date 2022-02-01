@@ -18,17 +18,17 @@
 a,ul,li,p {
     font-family: "Josefin Sans",sans-serif;
     line-height: 1.55rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.3px;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Josefin Sans",sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
-    letter-spacing: 0.125em;
+    letter-spacing: 0.14em;
     text-align: center;
     text-transform: uppercase;
     line-height: 1.25;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~ */
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ~~~~~~~~~~~~~~~~~~~ */
 
 #nav {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -82,20 +82,27 @@ h1, h2, h3, h4, h5, h6 {
 /* ~~~~~~~~~~~~~~~~~~~ */
 /*        Intro        */
 /* ~~~~~~~~~~~~~~~~~~~ */
-
-#intro{
-    padding: 1%;
+#main__wrapper{
     background:var(--primary);
-    height: 99vh;
+    color:var(--text);
+    background:var(--primary);
+    height: 200vh;
     width: 100vw;
     align-items: center;
     text-align: center;
-    color:var(--text);
+   
+}
+#intro{
+    padding: 3% 20%;
 }
 #name-card{
-    font-size: 3.5rem;
-    margin:1.5%;
+    
+    
 }
 #major{
-    margin:1.5%;
+ 
 }
+
+/* ~~~~~~~~~~~~~~~~~~~ */
+/*     Experience       */
+/* ~~~~~~~~~~~~~~~~~~~ */
