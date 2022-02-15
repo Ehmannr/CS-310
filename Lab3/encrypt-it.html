@@ -4,51 +4,56 @@
 <head>
   <title>Encrypt-It!</title>
   <style>
-
-.hidden {
-    display: none;
-}
-#label{
-  padding-left: 1.5%;
-}
-.center{
-  width: 70%;
-  padding:2.5%;
-}
+    .hidden {
+      display: none;
+    }
   </style>
+
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <script src="encrypt.js"></script>
 </head>
 
 <body>
-  <div class = center>
+
   <h1>Encrypt-It!</h1>
   <h2>Translate any text message into a super-secret cipher!</h2>
-  <div id="output">
-    <form id = "myForm" action = "encrypt.js">
-      <fieldset>
-        <legend>Text to Encrypt</legend>
-        <textarea id="textareabox" name="main_area" rows="10" cols="60">
-        </textarea>
-      </fieldset>
-  
-      <fieldset>
-        <legend>Text to Encrypt</legend>
-        <label><b>Cipher Type:</b></label>
 
-        <select id = "selectbox" onchange="showDiv()">
-          <option value="1">Shift Cipher </option>
-          <option value="2">Caesar Cipher</option>
-          <option value="3">Randomized</option>
+  <div id="input">
+
+    <fieldset>
+      <legend>Text to Encrypt</legend>
+      <textarea rows="10" cols="60" id="inout"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Encrypt Options</legend>
+
+      <label>
+        Cipher Type:
+        <select id="options" onchange="showDiv()">
+          <option selected="selected">Shift Cipher</option>
+          <option>Caesar Cipher</option>
+          <option>Randomized</option>
         </select>
+      </label>
 
-        <label id="label" class = "hidden" ><b>Key:</b></label>
-        <input type="number" id="key" class = "hidden">
 
-        <input type="button" onclick="getText()" value="Type of Encrypt">
-      </fieldset>
+      <label id="lable" class="hidden"><b>Key:</b></label>
+      <input type="number" id="key" placeholder="Your key" class="hidden">
+
+
+      <button id="btn" onclick="encryption()"> Encrypt it! </button>
+
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> Caps lock </label><br>
+      <button id="btn-reset" onclick="reset()"> Reset </button>
+
+    </fieldset>
+
   </div>
-  <button type="button" onclick="helloworld()">Click Me!</button>
 
-</div>
+  <div id="output"> </div>
+
 </body>
-<script src = "encrypt.js"></script>
+
 </html>

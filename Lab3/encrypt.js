@@ -1,146 +1,170 @@
-// Part II: pops up an alert box
+"use strict";
 
-//window.alert("hello world");
+/*** Name: Ryan Ehmann
+ * Date: 2/15/22
+ * Section: CS310
+ * 
+ * * --Lab4 --*/
 
-// Part III: print on web browser’s console
-//console.log("hello world");
-
-
-// Part IV: Hello World Button
-// write your code ...
-function helloworld() {
-    window.alert("hello world");
-
-
-}
-
-function getText() {
-    var text = document.getElementById("textareabox").value;
-
-    var cipher = document.querySelector('#selectbox').value;
-
-
-    var key = document.getElementById('key').valueAsNumber;
-    //console.log("I am key", key);
-
-    switchcipher(text, cipher, key);
-}
 /**
- * Part V: Implement a basic Shift-Cipher
- *
- * Returns an encrypted version of the given text, where
- * each letter is shifted alphabetically ahead by 1 letter,
- * and 'z' is shifted to 'a' (creating an alphabetical cycle).
+ * @function encryption() the main method for the program
+ * @listens onclickevent from the Encrypt It Button
  */
-var flag;
 
+
+function encryption() {
+  //kill all children
+  killChild();
+  //make vars
+  var text = document.getElementById("inout").value;
+  var cipher = document.querySelector('#options').value;
+  var key = document.getElementById('key').valueAsNumber;
+  var cipheredText;
+  //select correct cipher
+
+  if (cipher == "Randomized") {
+    cipheredText = randomizedCipher(text);
+  }
+
+  if (cipher == "Shift Cipher") {
+    cipheredText = shiftCipher(text);
+  }
+
+  if (cipher == "Caesar Cipher") {
+    cipheredText = caesarCipher(text, key);
+  }
+  createChild(cipheredText);
+
+}
+
+
+/**
+ * @function showDiv() allowing for the key to be shown for the Caesar Chipher 
+ */
 function showDiv() {
-    var cipher = document.querySelector('#selectbox').value;
-    element = document.getElementById("key");
-    element2 = document.getElementById("label");
+  var cipher = document.querySelector('#options').value;
+
+  if (cipher == "Caesar Cipher") {
+    document.getElementById("key").style.display = "inline";
+  } else {
+    document.getElementById("key").style.display = "none";
+  }
+}
 
 
-    //console.log("cipher is: ", cipher);
-    //console.log("flag is: ", flag);
-
-    if (cipher === '1') {
-        element.classList.toggle("hidden");
-        element2.classList.toggle("hidden");
-        flag = false;
-
-    } else if ((cipher === '2' || cipher === '3') && flag != true) {
-        element.classList.toggle("hidden");
-        element2.classList.toggle("hidden");
-        flag = true;
-
-
-    }
-
+/**
+ * @function createChild() making a child nodes
+ * @memberof output 
+ * 
+ */
+function createChild(cipheredText) {
+  const node = document.createElement("p")
+  const textnode = document.createTextNode(cipheredText)
+  node.appendChild(textnode);
+  document.getElementById("output").appendChild(node)
 
 
 }
 
-function switchcipher(text, cipher, key) {
-    if (cipher == 3) {
-        cipher = Math.floor(Math.random() * 2 + 1);
-        console.log("cipher is = " ,cipher);
-        console.log("Random time boiz");
-    }
-    if (cipher == 1) {
-        console.log("EZ");
-        shiftCipher(text);
-    }
-    if (cipher == 2) {
-        if(key<0){
-            alert("Please only use Positive numbers");
-            exit();
-        }
-        console.log("the hard one");
-        caesarCipher(text, key);
-    }
 
+/**
+ * @function killChild() killing the children for a clean screen
+ * @memberof output
+ */
+function killChild() {
+  var parent = document.getElementById("output");
+  var child = parent.firstElementChild;
+  while (child) {
+    parent.removeChild(child)
+    child = parent.firstElementChild;
+  }
 
 }
+
+
+/**
+ * resets the textarea to nothing
+ */
+function reset() {
+  document.getElementById("inout").value = "";
+}
+
+
+/**
+ * Encrpting a text with Shift Cipher
+ * @para {string} text to be encrypted
+ * @return {string} encrpted text
+ */
 
 function shiftCipher(text) {
-    // convert text to lower case
-    text.toLowerCase();
-
-    let result = "";
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] < 'a' || text[i] > 'z') {
-            // current character is not a letter
-            result += text[i];
-
-
-        } else if (text[i] == 'z') {
-            // letter is 'z'
-            // the encrypted letter should be 'a'
-            result += text[i] = 'a'
-
-        } else {
-            // letter is between 'a' and 'y’
-            // letter should be shifted alphabetically ahead by 1 letter
-            result += String.fromCharCode(text.charCodeAt(i) + 1);
-
-        }
+  text = text.toLowerCase();
+  let result = "";
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] < 'a' || text[i] > 'z') {
+      result += text[i];
+    } else if (text[i] == 'z') {
+      result += 'a';
+    } else {
+      // letter is between 'a' and 'y’
+      // each letter is shifted alphabetically ahead by 1 letter,
+      let letter = text.charCodeAt(i);
+      let resultLetter = String.fromCharCode(letter + 1);
+      result += resultLetter;
     }
-    alert(result);
-    return result;
-
+  }
+  return result;
 }
-
-
 
 
 /**
- * Part VI.
- * Returns an encrypted version of the given text, where
- * each letter is shifted alphabetically ahead by key letter
- * (creating an alphabetical cycle).
+ * Encrpting a text with Caesar Cipher
+ * @para {string} text to be encrypted
+ * @return {string} encrpted text
  */
+
 function caesarCipher(text, key) {
-    // convert text to lower case
-    text = text.toLowerCase();
-    //console.log(text);
-
-    let result = "";
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] < 'a' || text[i] > 'z') {
-            // current character is not a letter
-            // keep the character as it is
-            result += text[i];
-
-        } else {
-            // letter is between 'a' and 'y’
-            // letter should be shifted alphabetically ahead by key letter
-            //console.log(text[i]);
-            //console.log(text.charCodeAt(i));  // this makes letter === number
-            temp = ((text.charCodeAt(i) - 97) + key) %26 + 97;
-           result+= String.fromCharCode(temp);
+  text = text.toLowerCase();
+  let result = "";
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] < 'a' || text[i] > 'z') {
+      result += text[i];
+    } else {
+      // letter is between 'a' and 'z’
+      // each letter is shifted alphabetically ahead by key letters
+      let position = text.charCodeAt(i) - "a".charCodeAt(0);
+      position = (position + key) % 26;
+      let resultLetter = String.fromCharCode("a".charCodeAt(0) + position);
+      result += resultLetter;
     }
-
+  }
+  return result;
 }
-alert(result);
-return result;
+
+
+/**
+ * Encrpting a text with Randomized Cipher
+ * @para {string} text to be encrypted
+ * @return {string} encrpted text
+ */
+
+function randomizedCipher(text) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  let cipher = [];
+  // it's poor style to hardcode a magic number like 26
+  let alphabetLength = alphabet.length;
+  for (let i = 0; i < alphabetLength; i++) {
+    let randomIndex = Math.floor(Math.random() * alphabet.length);
+    cipher.push(alphabet.splice([Math.floor(Math.random() * alphabet.length)], 1));
+  }
+
+  let result = "";
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] >= 'a' && text[i] <= 'z') {
+      let letterCode = text.charCodeAt(i) - 'a'.charCodeAt(0);
+      result += cipher[letterCode];
+    } else {
+      result += text[i];
+    }
+  }
+  return result.replace(",", "");
 }
