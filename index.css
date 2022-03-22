@@ -20,10 +20,6 @@ a,ul,li,p {
     line-height: 1.55rem;
     letter-spacing: 1.3px;
 }
-a{
-  color: var(--accent);
-  cursor: pointer;
-}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Josefin Sans",sans-serif;
     font-weight: 500;
@@ -63,7 +59,6 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color:#DBE8D4;
     display: inline-block;
-    
 }
 
 /* ~~~~~~~~~~~~~~~~~~~ */
@@ -93,15 +88,16 @@ h1, h2, h3, h4, h5, h6 {
     background:var(--primary);
     height: 200vh;
     width: 100vw;
-   
-    
+    align-items: center;
+    text-align: center;
    
 }
 #intro{
     padding: 3% 20%;
 }
-#text{
-    text-align: center;
+#name-card{
+    
+    
 }
 #major{
  
@@ -110,29 +106,3 @@ h1, h2, h3, h4, h5, h6 {
 /* ~~~~~~~~~~~~~~~~~~~ */
 /*     Experience       */
 /* ~~~~~~~~~~~~~~~~~~~ */
-
-#exp {
-    text-align: center;
-}
-
-.circle-link {
-    display: inline-block;
-    color:white;
-    justify-content: space-around;
-    text-align: center;
-    list-style-type: none;
-    background: #8178d3;
-    border-radius: 50%;
-    height: 200px;
-    width:200px;
-    padding-top:76px;
-    }
-    #work-wrapper{
-        width: 70%;
-        margin: auto;
-        display: flex;
-    justify-content: space-around;
-    }
-    .section-header{
-        margin-bottom: 2.8em;
-    }
