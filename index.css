@@ -14,7 +14,9 @@
     --accent: #519872;
     --text: #363537;
 }
-
+a{
+    color:#3e7457;
+}
 a,ul,li,p {
     font-family: "Josefin Sans",sans-serif;
     line-height: 1.55rem;
@@ -30,6 +32,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.25;
     margin: 2rem 0;
 }
+.divider{
+    margin: 5% 0;
+    border-top: 5px var(--tertiary) solid;    
+}
 
 /* ~~~~~~~~~~~~~~~~~~~ */
 /*       Header        */
@@ -39,13 +45,13 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     min-width: 20rem;
     z-index: 999;
     background-color: #525e65;
     text-align: center;
     /*      small after glow under grey nav      */
-    box-shadow: 0 7px 20px 0 rgba(255, 255, 255, 0.253), 0 4px 10px 0 rgba(255, 255, 255, 0.397);
+    box-shadow: 0 7px 20px 0 rgba(1, 8, 1, 0.644), 0 4px 10px 0 rgba(255, 255, 255, 0.397);
     
 }
 
@@ -86,22 +92,23 @@ h1, h2, h3, h4, h5, h6 {
     background:var(--primary);
     color:var(--text);
     background:var(--primary);
-    height: 200vh;
+    padding-bottom: 10%;
     width: 100vw;
     align-items: center;
     text-align: center;
+    padding:1.5% 3% 
    
 }
 #intro{
     padding: 3% 20%;
 }
-#name-card{
-    
-    
+#profile-Pic{
+    margin-top: 7%;
+    border-radius: 30%;
+    width: 457px;
+    height: 304;
 }
-#major{
- 
-}
+
 
 /* ~~~~~~~~~~~~~~~~~~~ */
 /*     Experience       */
