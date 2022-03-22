@@ -23,12 +23,19 @@
     let btnreset = document.getElementById("btn-reset");
     
     // a button click event listener
-    btnElement.addEventListener("click", encryption);
+    btnElement.addEventListener("click", addnumber);
     btnreset.addEventListener("click", reset);
-    btnOption.addEventListener("change",showDiv)
-
+    btnOption.addEventListener("change",showDiv);
+var counter = 0;
+counter++;
    }
 
+
+   function addnumber(){
+    var counter = 0;
+    counter++
+
+   }
    /*** Name: Ryan Ehmann
  * Date: 2/15/22
  * Section: CS310
