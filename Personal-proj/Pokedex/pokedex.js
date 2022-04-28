@@ -136,6 +136,7 @@
     // the first being “photo” to link to the Pokemon’s photo (referenced by #my-card .pokepic),
     child = parent.getElementsByClassName("pokepic")
     child[0].src = BASE_URL + pokemon.images.photo
+    console.log(BASE_URL + pokemon.images.photo)
     // the second being “typeIcon” to link to the type icon of the Pokemon in the top-left corner (#my-card .type),
     child = parent.getElementsByClassName("type")
     child[0].src = BASE_URL + pokemon.images.typeIcon
