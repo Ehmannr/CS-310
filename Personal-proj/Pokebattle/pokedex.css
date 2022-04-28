@@ -1,3 +1,4 @@
+
 /* Provided stylesheet for HW 5: Pokedex Assignment */
 body, button {
   color: #222;
@@ -218,27 +219,27 @@ h2 {
 }
 
 .accuracy.buff {
-  background-image: url("https://webster.cs.washington.edu/pokedex/icons/accuracy-buff.png");
+  background-image: url("https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/icons/accuracy-buff.png");
 }
 
 .attack.buff {
-  background-image: url("https://webster.cs.washington.edu/pokedex/icons/attack-buff.png");
+  background-image: url("https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/icons/attack-buff.png");
 }
 
 .defense.buff {
-  background-image: url("https://webster.cs.washington.edu/pokedex/icons/defense-buff.png");
+  background-image: url("https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/icons/defense-buff.png");
 }
 
 .accuracy.debuff {
-  background-image: url("https://webster.cs.washington.edu/pokedex/icons/accuracy-debuff.png");
+  background-image: url("https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/icons/accuracy-debuff.png");
 }
 
 .attack.debuff {
-  background-image: url("https://webster.cs.washington.edu/pokedex/icons/attack-debuff.png");
+  background-image: url("https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/icons/attack-debuff.png");
 }
 
 .defense.debuff {
-  background-image: url("https://webster.cs.washington.edu/pokedex/icons/defense-debuff.png");
+  background-image: url("https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/icons/defense-debuff.png");
 }
 
 #endgame, #flee-btn, #start-btn {

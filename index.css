@@ -8,7 +8,7 @@
 }
 
 :root {
-    --primary: #BEC5AD;
+    --primary: #bec5ada4;
     --secondary: #A4B494;
     --tertiary: #525e65;
     --accent: #519872;
@@ -21,6 +21,7 @@ a,ul,li,p {
     font-family: "Josefin Sans",sans-serif;
     line-height: 1.55rem;
     letter-spacing: 1.3px;
+    list-style-type: none;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Josefin Sans",sans-serif;
@@ -120,3 +121,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ~~~~~~~~~~~~~~~~~~~ */
 /*     Experience       */
 /* ~~~~~~~~~~~~~~~~~~~ */
+.text {
+    margin: 2% 0;
+}
+
+.column1 {
+    
+    float: left;
+    width: 50%;
+}
