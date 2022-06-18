@@ -200,10 +200,16 @@ a[class *='purp_button'] {
   color: silver;
 }
 
-
+.viper-background{
+  background-image: url('/Files/ViperBG.jpg');
+  color:#FFFFFF;
+  padding: 10%;
+  min-height: 100vh;
+  min-width: 100vw;
+}
 .lightning-background{
   
-  background-image: url('../Files/lightningBG.jpg');
+  background-image: url('lightningBG.jpg');
   background-repeat:no-repeat;
   min-height: 100vh;
   color:white;

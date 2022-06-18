@@ -6,7 +6,7 @@ function badBackground() {
         if (num== 1) {
             document.querySelector('#bingo').classList.toggle("green-background")
             document.querySelector('#bingo').classList.toggle("bad-background")
-            document.querySelector('#bingo').innerHTML = "You Rolled a Natural 1, Refresh the page to remove this message"
+            document.querySelector('#bingo').innerHTML = "I hope you enjoy this Jimmy / Refresh page"
         }
 
     }

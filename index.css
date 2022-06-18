@@ -39,9 +39,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sub-divider{
-    margin: 3% 0;
-    margin-left: 25%;
-    width: 50%;
+    margin: auto;
+    margin-top: 5% ;
+    width: 70%;
     border-top: 1.5px #525e6598 solid;    
 }
 
@@ -101,11 +101,15 @@ h1, h2, h3, h4, h5, h6 {
     color:var(--text);
     background:var(--primary);
     padding-bottom: 10%;
-    width: 100vw;
+    width: 100%;
     align-items: center;
     text-align: center;
     padding:1.5% 3% 
    
+}
+#main__text{
+    width: 70%;
+    margin: auto;
 }
 #intro{
     padding: 3% 20%;
